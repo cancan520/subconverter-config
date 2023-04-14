@@ -12,12 +12,10 @@ profile:
 
 dns:
   enable: true
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   nameserver:
     - https://doh-77177a3c.doh.pub/dns-query
     - tls://dot-77177a3c.dot.pub
-  fallback:
-    - https://sub.home999.cc/dns-query
   fake-ip-filter:
     - +.stun.*.*
     - +.stun.*.*.*
@@ -36,3 +34,5 @@ tun:
   stack: system
   dns-hijack:
     - any:53
+  auto-route: true
+  auto-detect-interface: true
